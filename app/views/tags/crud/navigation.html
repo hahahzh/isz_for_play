@@ -1,0 +1,20 @@
+<ul>
+#{if _caller.type.name=='SeaLife_CHs' && session.admin_role=='3'}
+    <li><a href="@{SeaLife_CHs.list()}">&{'crud.home'}</a></li>
+#{/if}
+#{if _caller.type.name=='SeaLife_ENs' && session.admin_role=='3'}
+    <li><a href="@{SeaLife_ENs.list()}">&{'crud.home'}</a></li>
+#{/if}
+#{if session.admin_role!='3'}
+    <li><a href="@{AdminManagements.index()}">&{'crud.home'}</a></li>
+#{/if}
+    #{if _caller.type}
+        <li>&gt; <a href="@{list()}">&{_caller.type.name}</a></li>
+    #{/if}
+    #{if _caller.object?._key()}
+        <li>&gt; <a href="@{show(_caller.object._key())}">${_caller.object?.toString()?.escape()?.raw()}</a></li>
+    #{/if}
+    #{if request.actionMethod == 'blank' || request.actionMethod == 'create'}
+        <li>&gt; <a href="@{blank()}">&{'crud.blank'}</a></li>
+    #{/if}
+</ul>

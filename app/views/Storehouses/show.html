@@ -1,0 +1,16 @@
+#{extends 'CRUD/layout.html' /}
+#{set title:messages.get('crud.show.title', type.modelName) /}
+
+<div id="crudShow" class="${type.name}">
+
+    <h2 id="crudShowTitle">&{'crud.show.title', type.modelName}</h2>
+
+    <div class="objectForm">
+
+        #{crud.form /}
+
+    </div>
+
+
+
+</div>

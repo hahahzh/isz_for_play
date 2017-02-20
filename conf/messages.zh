@@ -1,0 +1,176 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+
+crud.title=爱试装管理后台
+crud.home=主页
+crud.blank=创建
+crud.index.title=请选择一个板块编辑
+crud.index.objectType=板块类型
+crud.index.action=
+crud.index.add=增加
+crud.add=增加 &{%s}
+crud.list.title=&{%s}
+crud.list.size=%d &{%s}
+crud.list.totalSize=%d 总计
+crud.pagination.previous=« 前一页
+crud.pagination.next=后一页 »
+crud.pagination.last=最后一页 »»
+crud.pagination.first=«« 第一页
+crud.show.title=编辑 &{%s}
+crud.save=保存
+crud.saveAndContinue=保存并继续编辑
+crud.cancel=取消
+crud.hasErrors=请按规则填写信息
+crud.blank.title=增加 &{%s}
+crud.saveAndAddAnother=保存并创建
+crud.delete=删除 &{%s}
+crud.created=&{%s} 已存在
+crud.saved=&{%s} 已保存
+crud.deleted=&{%s} 已删除
+crud.delete.error=不能删除这个选项
+crud.search=查询
+crud.none=(None)
+crud.selectValue=(请选择一个值)
+
+crud.help.required=必填.
+crud.help.minlength=最小长度是 %d.
+crud.help.maxlength=最大长度是 %d.
+crud.help.email=校验Email地址
+crud.help.dateformat=&{%s} 格式化.
+crud.help.numeric=Numeric.
+crud.help.min=必须大于 %d.
+crud.help.future=在未来.
+crud.help.past=以往.
+crud.help.after=在之后 %s.
+crud.help.before=在之前 %s.
+crud.help.range=在 %d 和 %d
+crud.help.numeric=数字
+crud.help.required=<font color=red>必填</font>
+
+secure.title=
+secure.username=用户名:
+secure.password=密&nbsp;&nbsp;&nbsp;码:
+secure.remember=记住我
+secure.signin=登陆
+secure.error=错误的用户名或密码.
+secure.logout=您已经退出.
+
+mail_show_name=爱试装
+mail_resetpassword_title=[密码重置]爱试装电子客户中心
+
+storehouse.zero=库存不足
+
+keyword=关键字
+AdminManagements=用户管理(管理员)
+AdminManagement=用户管理原
+name=名称
+pwd=密码
+Roles=角色
+role=角色
+Bloods=血型
+BodyModels=身材
+BodySizes=尺寸
+Constellations=星座
+FaceModels=脸型
+FrequencyModels=送货频率
+Goodss=商品
+HairModels=发型
+HierarchyModels=层级
+InclinationModels=倾向
+Orders=订单管理
+PriceRanges=价格区间
+Purchases=采购管理
+SkinColorModels=肤色
+Storehouses=库存
+UserDetailModels=用户详细信息
+UserModels=用户基本信息
+Blood=血型
+BodyModel=身材
+BodySize=尺寸
+Constellation=星座
+FaceModel=脸型
+FrequencyModel=送货频率
+Goods=商品
+HairModel=发型
+HierarchyModel=层级
+InclinationModel=倾向
+Order=订单管理
+PriceRange=价格区间
+Purchase=采购管理
+SkinColorModel=肤色
+Storehouse=库存
+UserDetailModel=用户详细信息
+UserModel=用户基本信息
+
+body_name=名称
+size_name=名称
+face_name=名称
+inclination_name=名称
+pricerange_name=名称
+skincolor_name=名称
+
+
+num=销售数量
+nameplate_price=铭牌价格 
+rebate=折扣
+sales_price=销售价格 
+memo=备注
+date_from=销售开始日期 
+date_end=销售终止日期
+goods_unit=单位
+
+
+code=商品编号
+attribute=商品属性 
+purchase_price=采购价格 
+purchasing_agent=采购员
+purchasing_date=采购日期
+company=厂商信息
+account_period=账期信息 
+purchase_unit=单位
+purchase_num=采购数量
+goods_num=销售数量
+storehouse_num=库存量
+updateDate=更新日期
+createDate=创建日期
+storehouse_goods=商品
+user_tmp=客户手机号码
+
+goods=商品
+order_num=订购数量 
+order_unit=数量单位
+sales_date=销售日期
+logistics=物流状态
+paystatus=付款状态
+user=订购客户
+isShow=是否作废
+
+nickname=昵称
+gender=性别
+portrait=头像
+exp=经验
+mobile=手机号码
+email=邮箱
+birthday=生日
+school=学校
+wx_id=微信号
+level=等级
+point=积分
+
+size=尺寸
+face=脸型
+skincolor=肤色 
+pricerange=价格区间
+hair=发型
+inclination=倾向 
+body=身材
+#hierarchy 
+#postDay 
+#frequency
+city=城市
+address=地址
+height=身高
+weight=体重
+constellation=星座 
+blood=血型

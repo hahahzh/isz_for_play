@@ -1,0 +1,477 @@
+20 二月 2017 14:39:44,666 INFO  ~ Starting G:\play-1.4.4\IShiZhuang
+20 二月 2017 14:39:45,587 WARN  ~ You're running Play! in DEV mode
+20 二月 2017 14:39:45,662 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+20 二月 2017 14:39:51,323 ERROR ~ Cannot include routes for module crud (not found)
+20 二月 2017 14:39:52,011 ERROR ~ 
+
+@735c1gmfm
+Failed to compile template /app/views/errors/500.html
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:32)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve500(PlayHandler.java:836)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:39:52,052 ERROR ~ 
+
+@735c1gmfl
+Internal Server Error (500) for request GET /admin
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.Play.start(Play.java:531)
+	at play.Play.detectChanges(Play.java:659)
+	at play.Invoker$Invocation.init(Invoker.java:209)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:39:52,053 ERROR ~ 
+
+@735c1gmfn
+Error during the 500 response generation
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.endTag(GroovyTemplateCompiler.java:362)
+	at play.templates.TemplateCompiler.generate(TemplateCompiler.java:93)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:15)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:39)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve500(PlayHandler.java:836)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:39:52,143 ERROR ~ 
+
+@735c1gmfo
+Failed to compile template /app/views/errors/404.html
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:32)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve404(PlayHandler.java:745)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:39:52,183 ERROR ~ 
+
+@735c1gmg0
+Failed to compile template /app/views/errors/500.html
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:32)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve500(PlayHandler.java:836)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:39:52,205 ERROR ~ 
+
+@735c1gmfp
+Internal Server Error (500) for request GET /favicon.ico
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.endTag(GroovyTemplateCompiler.java:362)
+	at play.templates.TemplateCompiler.generate(TemplateCompiler.java:93)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:15)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:39)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve404(PlayHandler.java:745)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:39:52,206 ERROR ~ 
+
+@735c1gmg1
+Error during the 500 response generation
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.endTag(GroovyTemplateCompiler.java:362)
+	at play.templates.TemplateCompiler.generate(TemplateCompiler.java:93)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:15)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:39)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve500(PlayHandler.java:836)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:39:58,832 ERROR ~ Restart: null
+java.lang.NullPointerException
+	at java.lang.instrument.ClassDefinition.<init>(ClassDefinition.java:63)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:327)
+	at play.Play.detectChanges(Play.java:641)
+	at play.Invoker$Invocation.init(Invoker.java:209)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:39:58,905 ERROR ~ 
+
+@735c1gmg3
+Failed to compile template /app/views/errors/500.html
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:32)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve500(PlayHandler.java:836)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:39:58,933 ERROR ~ 
+
+@735c1gmg2
+Internal Server Error (500) for request GET /admin
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.Play.start(Play.java:531)
+	at play.Play.detectChanges(Play.java:662)
+	at play.Invoker$Invocation.init(Invoker.java:209)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:39:58,934 ERROR ~ 
+
+@735c1gmg4
+Error during the 500 response generation
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.endTag(GroovyTemplateCompiler.java:362)
+	at play.templates.TemplateCompiler.generate(TemplateCompiler.java:93)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:15)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:39)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve500(PlayHandler.java:836)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:39:59,018 ERROR ~ 
+
+@735c1gmg5
+Failed to compile template /app/views/errors/404.html
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:32)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve404(PlayHandler.java:745)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:39:59,072 ERROR ~ 
+
+@735c1gmg7
+Failed to compile template /app/views/errors/500.html
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:32)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve500(PlayHandler.java:836)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:39:59,097 ERROR ~ 
+
+@735c1gmg6
+Internal Server Error (500) for request GET /favicon.ico
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.endTag(GroovyTemplateCompiler.java:362)
+	at play.templates.TemplateCompiler.generate(TemplateCompiler.java:93)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:15)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:39)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve404(PlayHandler.java:745)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:39:59,098 ERROR ~ 
+
+@735c1gmg8
+Error during the 500 response generation
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.endTag(GroovyTemplateCompiler.java:362)
+	at play.templates.TemplateCompiler.generate(TemplateCompiler.java:93)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:15)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:39)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve500(PlayHandler.java:836)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:40:04,713 ERROR ~ Restart: null
+java.lang.NullPointerException
+	at java.lang.instrument.ClassDefinition.<init>(ClassDefinition.java:63)
+	at play.classloading.ApplicationClassloader.detectChanges(ApplicationClassloader.java:327)
+	at play.Play.detectChanges(Play.java:641)
+	at play.Invoker$Invocation.init(Invoker.java:209)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:40:04,751 ERROR ~ 
+
+@735c1gmga
+Failed to compile template /app/views/errors/500.html
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:32)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve500(PlayHandler.java:836)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:40:04,761 ERROR ~ 
+
+@735c1gmg9
+Internal Server Error (500) for request GET /admin
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.Play.start(Play.java:531)
+	at play.Play.detectChanges(Play.java:662)
+	at play.Invoker$Invocation.init(Invoker.java:209)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:40:04,761 ERROR ~ 
+
+@735c1gmgb
+Error during the 500 response generation
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.endTag(GroovyTemplateCompiler.java:362)
+	at play.templates.TemplateCompiler.generate(TemplateCompiler.java:93)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:15)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:39)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve500(PlayHandler.java:836)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:40:04,895 ERROR ~ 
+
+@735c1gmgc
+Failed to compile template /app/views/errors/404.html
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:32)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve404(PlayHandler.java:745)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:40:04,914 ERROR ~ 
+
+@735c1gmge
+Failed to compile template /app/views/errors/500.html
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:32)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve500(PlayHandler.java:836)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:40:04,924 ERROR ~ 
+
+@735c1gmgd
+Internal Server Error (500) for request GET /favicon.ico
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.endTag(GroovyTemplateCompiler.java:362)
+	at play.templates.TemplateCompiler.generate(TemplateCompiler.java:93)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:15)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:39)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve404(PlayHandler.java:745)
+	at Invocation.HTTP Request(Play!)
+20 二月 2017 14:40:04,924 ERROR ~ 
+
+@735c1gmgf
+Error during the 500 response generation
+
+Compilation error (In /app/controllers/AdminManagements.java around line 18)
+The file /app/controllers/AdminManagements.java could not be compiled. Error raised is : CRUD cannot be resolved to a type
+
+play.exceptions.CompilationException: CRUD cannot be resolved to a type
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.endTag(GroovyTemplateCompiler.java:362)
+	at play.templates.TemplateCompiler.generate(TemplateCompiler.java:93)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:15)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:39)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve500(PlayHandler.java:836)
+	at Invocation.HTTP Request(Play!)

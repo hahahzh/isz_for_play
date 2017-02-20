@@ -1,0 +1,185 @@
+#{extends 'CRUD/layout.html' /}
+#{set title:messages.get('crud.title') /}
+
+<div id="crudIndex">
+
+    <h2>&{'crud.index.title'}</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>商品管理</th>
+                <th width="20%">&{'crud.index.action'}</th>
+            </tr>
+        </thead>
+        <tbody>
+       <tr>
+                <td>
+                    <a href="/adminmanagements/list">&{'AdminManagements'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/adminmanagements/blank">&{'crud.index.add', AdminManagements}</a>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <a href="/goodss/list">&{'Goodss'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/goodss/blank">&{'crud.index.add', Goodss}</a>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <a href="/orders/list">&{'Orders'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/orders/blank">&{'crud.index.add', Orders}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="/purchases/list">&{'Purchases'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/purchases/blank">&{'crud.index.add', Purchases}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="/storehouses/list">&{'Storehouses'}</a>
+                </td>
+                <td class="crudNew" >
+                    
+                </td>
+            </tr>
+                        </tbody>
+    </table>
+          <table>
+        <thead>
+            <tr>
+                <th>用户管理</th>
+                <th width="20%">&{'crud.index.action'}</th>
+            </tr>
+        </thead>
+        <tbody>      
+<tr>
+                <td>
+                    <a href="/userdetailmodels/list">&{'UserDetailModels'}</a>
+                </td>
+                <td class="crudNew" >
+                    
+                </td>
+            </tr>
+	                <tr>
+                <td>
+                    <a href="/usermodels/list">&{'UserModels'}</a>
+                </td>
+                <td class="crudNew" >
+                    
+                </td>
+            </tr>
+            </tbody>
+    </table>
+            
+
+    <table>
+        <thead>
+            <tr>
+                <th>用户基本属性设置</th>
+                <th width="20%">&{'crud.index.action'}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <a href="/bloods/list">&{'Bloods'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/bloods/blank">&{'crud.index.add', Bloods}</a>
+                </td>
+            </tr>
+                          <tr>
+                <td>
+                    <a href="/bodymodels/list">&{'BodyModels'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/bodymodels/blank">&{'crud.index.add', BodyModels}</a>
+                </td>
+            </tr>
+	                <tr>
+                <td>
+                    <a href="/bodysizes/list">&{'BodySizes'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/bodysizes/blank">&{'crud.index.add',BodySizes}</a>
+                </td>
+            </tr>
+	                <tr>
+                <td>
+                    <a href="/constellations/list">&{'Constellations'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/constellations/blank">&{'crud.index.add', Constellations}</a>
+                </td>
+            </tr>
+	                <tr>
+                <td>
+                    <a href="/facemodels/list">&{'FaceModels'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/facemodels/blank">&{'crud.index.add', FaceModels}</a>
+                </td>
+            </tr>
+	                <tr>
+                <td>
+                    <a href="/frequencymodels/list">&{'FrequencyModels'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/frequencymodels/blank">&{'crud.index.add', FrequencyModels}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="/hairmodels/list">&{'HairModels'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/hairmodels/blank">&{'crud.index.add', HairModels}</a>
+                </td>
+            </tr>
+	                <tr>
+                <td>
+                    <a href="/hierarchymodels/list">&{'HierarchyModels'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/hierarchymodels/blank">&{'crud.index.add', HierarchyModels}</a>
+                </td>
+            </tr>
+	                <tr>
+                <td>
+                    <a href="/inclinationmodels/list">&{'InclinationModels'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/inclinationmodels/blank">&{'crud.index.add', InclinationModels}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="/priceranges/list">&{'PriceRanges'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/priceranges/blank">&{'crud.index.add', PriceRanges}</a>
+                </td>
+            </tr>
+             <tr>
+                <td>
+                    <a href="/skincolormodels/list">&{'SkinColorModels'}</a>
+                </td>
+                <td class="crudNew" >
+                    <a href="/skincolormodels/blank">&{'crud.index.add', SkinColorModels}</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
