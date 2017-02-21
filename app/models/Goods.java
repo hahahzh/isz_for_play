@@ -5,11 +5,11 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 
 import controllers.CRUD.Hidden;
 import play.data.validation.MaxSize;
 import play.data.validation.Required;
+import play.db.jpa.Blob;
 import play.db.jpa.Model;
 
 
@@ -25,6 +25,8 @@ public class Goods extends Model {
 	public String name;
 	
 	public String code;
+	
+	public Blob goods_img;
 	
 	public Double nameplate_price;
 	

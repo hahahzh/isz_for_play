@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import controllers.CRUD.Hidden;
 import play.data.validation.MaxSize;
 import play.data.validation.Required;
+import play.data.validation.Unique;
 import play.db.jpa.Model;
 
 
@@ -20,6 +21,7 @@ public class UserDetailModel extends Model {
 
 	@Required
 	@OneToOne
+	@Unique
 	public UserModel user;
 	
 	@ManyToOne

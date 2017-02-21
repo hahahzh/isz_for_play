@@ -4,6 +4,20 @@
 
 # Home page
 GET     /                                       Application.index
+*     	/api/reg                                       Master.register
+*     	/api/cd                                       Master.checkDigit
+*     	/api/login							Master.login
+*     	/api/user/all							Master.getUserAllInfo
+*     	/api/user/info							Master.getUserInfo
+*     	/api/user/save							Master.updateUserInfo
+*     	/api/userdetail/save							Master.updateUserDetailInfo
+*     	/api/userdetail/init							Master.initUserDetail
+*     	/api/userdetail/info							Master.getUserDetailInfo
+#*     	/api/order/init							Master.initOrderData
+*     	/api/order/list							Master.getOrderList
+*     	/api/order/info							Master.getOrderInfo
+
+*       /api/download								Master.download
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

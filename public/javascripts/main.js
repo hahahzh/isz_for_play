@@ -18,8 +18,8 @@ function sendCode(type){
 //		return;
 //	}
 	var url;
-	if(type == 0)url = "/c/cd";
-	else if(type == 1)url = "/c/cdf";
+	if(type == 0)url = "/api/cd";
+	else if(type == 1)url = "/api/cdf";
 	var data = {
             phone:p
         };
@@ -62,18 +62,18 @@ function regSubmit() {
 	var p = $("#phone").val();
 	var vc = $("#vc").val();
 	var pwd = $("#pwd").val();
-//	if(p == null || p == ''){
-//		alert("手机号不能为空");
-//		return;
-//	}
-//	if(vc == null || vc == ''){
-//		alert("验证码不能为空");
-//		return;
-//	}
-//	if(pwd == null || pwd == ''){
-//		alert("密码不能为空");
-//		return;
-//	}
+	if(p == null || p == ''){
+		alert("手机号不能为空");
+		return;
+	}
+	if(vc == null || vc == ''){
+		alert("验证码不能为空");
+		return;
+	}
+	if(pwd == null || pwd == ''){
+		alert("密码不能为空");
+		return;
+	}
 	var data = {
 			code:code,
             phone:p,
@@ -81,7 +81,7 @@ function regSubmit() {
             pwd:pwd
         };
 	
-	sendRequest("/c/r", "post", data, "text", 11, 1, 0);
+	sendRequest("/api/reg", "post", data, "text", 12, 1, 0);
 }
 
 function forgetPWDSubmit() {
@@ -101,24 +101,25 @@ function loginSubmit() {
 	var n = $("#name").val();
 	var pwd = $("#pwd").val();
 	var repage = GetQueryString("repage");
-	if(repage == null)repage = 110;
+	if(repage == null)repage = 14;
 	else repage = Number(repage);
-//	if(n == null || n == ''){
-//		alert("用户名不能为空");
-//		return;
-//	}
-//	if(pwd == null || pwd == ''){
-//		alert("密码不能为空");
-//		return;
-//	}
+	if(n == null || n == ''){
+		alert("用户名不能为空");
+		return;
+	}
+	if(pwd == null || pwd == ''){
+		alert("密码不能为空");
+		return;
+	}
 	var data = {
             name:n,
             pwd:pwd
         };
-	sendRequest("/c/l", "post", data, "text", repage, 0, 0);
+	sendRequest("/api/login", "post", data, "text", repage, 0, 0);
 }
 
 function sendRequest(url, method, data, dataType, forword, successMsg, repage){
+	
 	$.ajax({
         url: url,
         type: method,
@@ -140,125 +141,210 @@ function sendRequest(url, method, data, dataType, forword, successMsg, repage){
     });
 }
 
-
-function loadInitPersonalData(){
-	var data;
-	var url;
+function loadOrderList(){
 	var code = $("#code").val();
-	var s = sessionStorage.getItem("sessionID");
-	if(s == null)s="";
-	
-	var pId = GetQueryString("pId");
-	
-	if(pId==null || pId==''){
-		data = {
-				code:code,
-	            z:s
-	        };
-		url = "/c/p/gmi";
-	}else{
-		data = {
-				pId:pId
-	        };
-		url = "/c/p/gpmi";
-	}
+	var data = {
+			code:code,
+            z:sessionStorage.getItem("sessionID")
+        };
 	$.ajax({
-        url: url,
+        url: "/api/order/list",
         type: "get",
         data: data,
         dataType: "text",
         success:function(msg){
         	var obj = jQuery.parseJSON(msg);
         	sessionStorage.setItem("sessionID", obj.session);
+        	
         	if(obj.state==1){
-        		$("#a_p_games").attr("href", "/public/html5/personal/game_view.html?pId="+obj.results.pId);
-        		$("#a_p_teams").attr("href", "/public/html5/personal/team_view.html?pId="+obj.results.pId);
-        		$("#pId").val(obj.results.pId);
-        		$("#v_img_ch").attr("src", obj.results.img_ch);
-        		$("#name").text(obj.results.name==null?'':obj.results.name);
-        		$("#nickname").text(obj.results.nickname==null?'':obj.results.nickname);
-        		$("#birthday").text(obj.results.birthday);
-        		$("#gender").text(obj.results.gender==null?'':obj.results.gender);
-        		$("#nationality").text(obj.results.nationality==null?'':obj.results.nationality);
-        		$("#region").text(obj.results.region==null?'':obj.results.region);
-        		$("#height").text(obj.results.height==null?'':obj.results.height+" CM");
-        		$("#weight").text(obj.results.weight==null?'':obj.results.weight+" KG");
-        		$("#number").text(obj.results.number==null?'':obj.results.number+" 号");
-        		$("#team").text(obj.results.team);
-        		$("#job1").text(obj.results.job1);
-        		$("#job2").text(obj.results.job2);
-        		$("#specialty").text(obj.results.specialty==null?'':obj.results.specialty);
-        		if(obj.results.auth==1){
-        			$("#auth").text("是");
-        		}else{
-        			$("#auth").text("否");
-        		}
-        		$("#qq").text(obj.results.qq==null?'':obj.results.qq);
-        		$("#email").text(obj.results.email==null?'':obj.results.email);
-        		$("#weixin").text(obj.results.weixin==null?'':obj.results.weixin);
-            	$("#phone").text(obj.results.phone==null?'':obj.results.phone);
-            	$("#constellation").text(obj.results.constellation);
-            	$("#blood").text(obj.results.blood);
+        		str = "";
+        		$.each(obj.results.list, function(index, json) {
+        			str+="<tr>";
+        			str+="<td><a href='/public/html5/order/view.html?oCode="+json.id+"'>"+json.name+"</a></td>";
+        			str+="<td>"+json.order_num+"</td>";
+        			str+="<td>"+json.paystatus+"</td>";
+        			str+="<td>"+json.logistics+"</td>";
+        			str+="<td>"+json.sales_date+"</td>";
+                	str+="</tr>";
+        		});
+        		$("#o_list").append(str);
         	}else{
-//        		if(obj.msg == 'session_expired'){
-        			jumppage(11, 4, 110);
-//        		}
-        			
+        		findError(obj);
+        		if(obj.msg == 'session_expired'){
+        			jumppage(11, 4, 120);
+        		}
         	}	
         }
     });
 }
 
-function loadEditPersonalData(){
-	var blood, constellation, job1, job2, gender;
+function loadViewOrderData(){
+
 	var data = {
+			oCode:GetQueryString("oCode"),
             z:sessionStorage.getItem("sessionID")
         };
-	
 	$.ajax({
-        url: "/c/p/gmi",
+        url: "/api/order/info",
         type: "get",
         data: data,
         dataType: "text",
         success:function(msg){
         	var obj = jQuery.parseJSON(msg);
         	if(obj.state==1){
-        		$("#v_img_ch").attr("src", obj.results.img_ch);
+        		
+        		$("#name").text(obj.results.name);
+        		$("#goods_img").attr("src", obj.results.goods_img);
+        		$("#nameplate_price").text(obj.results.nameplate_price);
+        		$("#rebate").text(obj.results.rebate);
+        		$("#sales_price").text(obj.results.sales_price);
+        		$("#order_num").text(obj.results.order_num+obj.results.order_unit);
+        		$("#sales_date").text(obj.results.sales_date);
+        		$("#memo").text(obj.results.memo);
+        		$("#logistics").text(obj.results.logistics);
+        		$("#paystatus").text(obj.results.paystatus);
+        		$("#user").text(obj.results.user);
+        	}else{
+        		if(obj.msg == 'session_expired'){
+        			jumppage(11, 4, 111);
+        		}
+        	}	
+        }
+    });
+}
+
+function loadViewPersonalData(){
+
+	var data = {
+            z:sessionStorage.getItem("sessionID")
+        };
+	$.ajax({
+        url: "/api/user/all",
+        type: "get",
+        data: data,
+        dataType: "text",
+        success:function(msg){
+        	var obj = jQuery.parseJSON(msg);
+        	if(obj.state==1){
+        		$("#name").text(obj.results.name);
+        		$("#nickname").text(obj.results.nickname);
+        		$("#birthday").text(obj.results.birthday);
+        		$("#gender").text(obj.results.gender);
+        		$("#email").text(obj.results.email);
+        		$("#phone").text(obj.results.phone);
+        		$("#weixin").text(obj.results.weixin);
+        		$("#school").text(obj.results.school);
+        		$("#size").text(obj.results.size);
+        		$("#face").text(obj.results.face);
+        		$("#skincolor").text(obj.results.skincolor);
+        		$("#pricerange").text(obj.results.pricerange);
+        		$("#hair").text(obj.results.hair);
+        		$("#inclination").text(obj.results.inclination);
+        		$("#body").text(obj.results.body);
+        		$("#city").text(obj.results.city);
+        		$("#address").text(obj.results.address);
+        		$("#height").text(obj.results.height);
+        		$("#weight").text(obj.results.weight);
+        		$("#constellation").text(obj.results.constellation);
+        		$("#blood").text(obj.results.blood);
+        		$("#updated_at_ch").text(obj.results.updated_at_ch);
+            	
+        	}else{
+        		if(obj.msg == 'session_expired'){
+        			jumppage(11, 4, 111);
+        		}
+        	}	
+        }
+    });
+}
+
+function loadEditPersonalData(){
+
+	var gender;
+	var data = {
+            z:sessionStorage.getItem("sessionID")
+        };
+	$.ajax({
+        url: "/api/user/info",
+        type: "get",
+        data: data,
+        dataType: "text",
+        success:function(msg){
+        	var obj = jQuery.parseJSON(msg);
+        	if(obj.state==1){
+//        		$("#v_img_ch").attr("src", obj.results.img_ch);
+        		$("#id").val(obj.results.pId);
         		$("#name").val(obj.results.name);
         		$("#nickname").val(obj.results.nickname);
         		$("#birthday").val(obj.results.birthday);
         		if('女'==obj.results.gender){
-        			$("#gender").prepend("<option value='男'>男</option>");
-        			$("#gender").prepend("<option value='女' selected>女</option>");
+        			$("#gender").prepend("<option value='1'>男</option>");
+        			$("#gender").prepend("<option value='2' selected>女</option>");
         		}else{
-        			$("#gender").prepend("<option value='男' selected>男</option>");
-        			$("#gender").prepend("<option value='女'>女</option>");
+        			$("#gender").prepend("<option value='1' selected>男</option>");
+        			$("#gender").prepend("<option value='2'>女</option>");
         		}
-        		$("#nationality").val(obj.results.nationality);
-        		$("#region").val(obj.results.region);
-        		$("#height").val(obj.results.height);
-        		$("#weight").val(obj.results.weight);
-        		$("#number").val(obj.results.number);
-        		$("#team").val(obj.results.team);
-        		$("#job1").val(obj.results.job1);
-        		$("#job2").val(obj.results.job2);
-        		$("#specialty").val(obj.results.specialty);
-        		$("#auth").val(obj.results.auth);
-        		if(obj.results.auth == 0){
-        			$("#r_identification").show();
-        		}else{
-        			$("#r_identification").hide();
-        		}
-        		$("#qq").val(obj.results.qq);
+        		
+        		
         		$("#email").val(obj.results.email);
         		$("#weixin").val(obj.results.weixin);
-            	$("#phone").val(obj.results.phone);
+            	$("#mobile").val(obj.results.phone);
             	$("#constellation").val(obj.results.constellation);
-            	$("#blood").val(obj.results.blood);
-            	blood = obj.results.blood;
-            	constellation = obj.results.constellation;
-            	job1 = obj.results.job1;
-            	job2 = obj.results.job2;
+            	$("#school").val(obj.results.school);
+            	
+        	}else{
+        		if(obj.msg == 'session_expired'){
+        			jumppage(11, 4, 111);
+        		}
+        	}	
+        }
+    });
+}
+
+function loadEditPersonalDetailData(){
+	var size,face,skincolor,pricerange,hair,blood, inclination,body,hierarchy,postDay,frequency,constellation, job1, job2, gender;
+	var data = {
+            z:sessionStorage.getItem("sessionID")
+        };
+	
+	$.ajax({
+        url: "/api/userdetail/info",
+        type: "get",
+        data: data,
+        dataType: "text",
+        success:function(msg){
+        	var obj = jQuery.parseJSON(msg);
+        	if(obj.state==1){
+        		$("#size").val(obj.results.size);
+        		$("#face").val(obj.results.face);
+        		$("#skincolor").val(obj.results.skincolor);
+        		$("#pricerange").val(obj.results.pricerange);
+        		$("#hair").val(obj.results.hair);
+        		$("#inclination").val(obj.results.inclination);
+        		$("#bodymodel").val(obj.results.body);
+        		$("#hierarchy").val(obj.results.hierarchy);
+        		$("#postDay").val(obj.results.postDay);
+        		$("#frequency").val(obj.results.frequency);
+        		$("#city").val(obj.results.city);
+        		$("#address").val(obj.results.address);
+        		$("#height").val(obj.results.height);
+        		$("#weight").val(obj.results.weight);
+        		$("#constellation").val(obj.results.constellation);
+        		$("#blood").val(obj.results.blood);
+            	
+        		size = obj.results.size;
+        		face = obj.results.face;
+        		skincolor = obj.results.skincolor;
+        		pricerange = obj.results.pricerange;
+        		hair = obj.results.hair;
+        		inclination = obj.results.inclination;
+        		bodymodel = obj.results.body;
+        		hierarchy = obj.results.hierarchy;
+        		postDay = obj.results.postDay;
+        		frequency = obj.results.frequency;
+        		constellation = obj.results.constellation;
+        		blood = obj.results.blood;
+
         	}else{
         		if(obj.msg == 'session_expired'){
         			jumppage(11, 4, 111);
@@ -268,7 +354,7 @@ function loadEditPersonalData(){
     });
 	
 	$.ajax({
-        url: "/c/p/gmd",
+        url: "/api/userdetail/init",
         type: "get",
         data: data,
         dataType: "text",
@@ -277,7 +363,7 @@ function loadEditPersonalData(){
         	if(obj.state==1){
         		$.each(obj.results.bloodlist, function(index, json) { 
         			for(var key in json){  
-        				if(blood == json[key]){
+        				if(blood == key){
         					$("#blood").prepend("<option value="+key+" selected>"+json[key]+"</option>");
         				}else{
         					$("#blood").prepend("<option value="+key+">"+json[key]+"</option>");
@@ -286,31 +372,96 @@ function loadEditPersonalData(){
         		});
         		$.each(obj.results.constellationlist, function(index, json) { 
         			for(var key in json){  
-        				if(constellation == json[key]){
+        				if(constellation == key){
         					$("#constellation").prepend("<option value="+key+" selected>"+json[key]+"</option>");
         				}else{
         					$("#constellation").prepend("<option value="+key+">"+json[key]+"</option>");
         				}
         			}
         		});
-        		$.each(obj.results.joblist, function(index, json) { 
+          		$.each(obj.results.bodymodellist, function(index, json) { 
         			for(var key in json){  
-        				if(job1 == json[key]){
-        					$("#job1").prepend("<option value="+key+" selected>"+json[key]+"</option>");
+        				if(bodymodel == key){
+        					$("#bodymodel").prepend("<option value="+key+" selected>"+json[key]+"</option>");
         				}else{
-        					$("#job1").prepend("<option value="+key+">"+json[key]+"</option>");
+        					$("#bodymodel").prepend("<option value="+key+">"+json[key]+"</option>");
         				}
         			}
         		});
-        		$.each(obj.results.joblist, function(index, json) { 
+          		$.each(obj.results.bodysizelist, function(index, json) { 
         			for(var key in json){  
-        				if(job2 == json[key]){
-        					$("#job2").prepend("<option value="+key+" selected>"+json[key]+"</option>");
+        				
+        				if(size == key){
+        					$("#size").prepend("<option value="+key+" selected>"+json[key]+"</option>");
         				}else{
-        					$("#job2").prepend("<option value="+key+">"+json[key]+"</option>");
+        					$("#size").prepend("<option value="+key+">"+json[key]+"</option>");
         				}
         			}
         		});
+          		$.each(obj.results.facemodellist, function(index, json) { 
+        			for(var key in json){  
+        				
+        				if(face == key){
+        					$("#face").prepend("<option value="+key+" selected>"+json[key]+"</option>");
+        				}else{
+        					$("#face").prepend("<option value="+key+">"+json[key]+"</option>");
+        				}
+        			}
+        		});
+          		$.each(obj.results.hairmodellist, function(index, json) { 
+        			for(var key in json){  
+        				if(hair == key){
+        					$("#hair").prepend("<option value="+key+" selected>"+json[key]+"</option>");
+        				}else{
+        					$("#hair").prepend("<option value="+key+">"+json[key]+"</option>");
+        				}
+        			}
+        		});
+          		$.each(obj.results.inclinationmodellist, function(index, json) { 
+        			for(var key in json){  
+        				if(inclination == key){
+        					$("#inclination").prepend("<option value="+key+" selected>"+json[key]+"</option>");
+        				}else{
+        					$("#inclination").prepend("<option value="+key+">"+json[key]+"</option>");
+        				}
+        			}
+        		});
+          		$.each(obj.results.pricerangelist, function(index, json) { 
+        			for(var key in json){  
+        				if(pricerange == key){
+        					$("#pricerange").prepend("<option value="+key+" selected>"+json[key]+"</option>");
+        				}else{
+        					$("#pricerange").prepend("<option value="+key+">"+json[key]+"</option>");
+        				}
+        			}
+        		});
+          		$.each(obj.results.skincolormodellist, function(index, json) { 
+        			for(var key in json){  
+        				if(skincolor == key){
+        					$("#skincolor").prepend("<option value="+key+" selected>"+json[key]+"</option>");
+        				}else{
+        					$("#skincolor").prepend("<option value="+key+">"+json[key]+"</option>");
+        				}
+        			}
+        		});
+//          		$.each(obj.results.hierarchymodellist, function(index, json) { 
+//        			for(var key in json){  
+//        				if(constellation == json[key]){
+//        					$("#hierarchy").prepend("<option value="+key+" selected>"+json[key]+"</option>");
+//        				}else{
+//        					$("#hierarchy").prepend("<option value="+key+">"+json[key]+"</option>");
+//        				}
+//        			}
+//        		});
+//           		$.each(obj.results.frequencymodellist, function(index, json) { 
+//        			for(var key in json){  
+//        				if(constellation == json[key]){
+//        					$("#face").prepend("<option value="+key+" selected>"+json[key]+"</option>");
+//        				}else{
+//        					$("#face").prepend("<option value="+key+">"+json[key]+"</option>");
+//        				}
+//        			}
+//        		});
         	}	
         }
     });
@@ -324,26 +475,37 @@ function personalSubmit(){
 			nickname: $("#nickname").val(),
 			birthday: $("#birthday").val(),
 			gender: $("#gender").val(),
-			nationality: $("#nationality").val(),
-			region: $("#region").val(),
+			job2: $("#job2").val(),
+			email: $("#email").val(),
+			phone: $("#mobile").val(),
+			school: $("#school").val(),
+			z:sessionStorage.getItem("sessionID")
+        };
+	
+	sendRequest("/api/user/save", "post", data, "text", 13, 3, 0);
+}
+
+function personalDetailSubmit(){
+//	$("#img_ch").attr();
+
+	var data = {
+			size: $("#size").val(),
+			face: $("#face").val(),
+			skincolor: $("#skincolor").val(),
+			pricerange: $("#pricerange").val(),
+			hair: $("#hair").val(),
+			inclination: $("#inclination").val(),
+			bodymodel: $("#bodymodel").val(),
+			city: $("#city").val(),
+			address: $("#address").val(),
 			height: $("#height").val(),
 			weight: $("#weight").val(),
-			number: $("#number").val(),
-			team: $("#team").val(),
-			job1: $("#job1").val(),
-			job2: $("#job2").val(),
-			specialty: $("#specialty").val(),
-			auth: $("#auth").val(),
-			qq: $("#qq").val(),
-			email: $("#email").val(),
-			weixin: $("#weixin").val(),
-			phone: $("#phone").val(),
 			constellation: $("#constellation").val(),
 			blood: $("#blood").val(),
 			z:sessionStorage.getItem("sessionID")
         };
 	
-	sendRequest("/c/p/umi", "post", data, "text", 110, 3, 0);
+	sendRequest("/api/userdetail/save", "post", data, "text", 14, 3, 0);
 }
 
 function loadPGameList(){
@@ -468,18 +630,12 @@ function jumppage(page, smsg, repage){
 	if(repage != 0){
 		resource = "&repage="+repage;
 	}
+	
 	var regpage = "/public/html5/reg.html"+successMsg+resource;
 	var loginpage = "/public/html5/login.html"+successMsg+resource;
-	var personalviewpage = "/public/html5/personal/info_view.html"+successMsg;
-	var personaleditpage = "/public/html5/personal/info_edit.html"+successMsg;
-	var personalportraitpage = "/public/html5/personal/info_edit_portrait.html"+successMsg;
-	var teamviewpage = "/public/html5/team/info_view.html"+successMsg;
-	var teameditpage = "/public/html5/team/info_edit.html"+successMsg;
-	var teamlogopage = "/public/html5/team/info_edit_logo.html"+successMsg;
-	var teamcoachpage = "/public/html5/team/info_edit_coach.html"+successMsg;
-	var teamcaptainpage = "/public/html5/team/info_edit_captain.html"+successMsg;
-	var gameviewpage = "/public/html5/game/info_view.html"+successMsg;
-	var gamelistpage = "/public/html5/game/info_list.html"+successMsg;
+	var userpage = "/public/html5/user/form.html"+successMsg+resource;
+	var userdetailpage = "/public/html5/userdetail/form.html"+successMsg+resource;
+	var userviewpage = "/public/html5/user/view.html"+successMsg+resource;
 	switch(page){
 	case 10:
 		window.location = regpage;
@@ -487,38 +643,14 @@ function jumppage(page, smsg, repage){
 	case 11:
 		window.location = loginpage;
 		break;
-	case 110:
-		window.location = personalviewpage;
+	case 12:
+		window.location = userpage;
 		break;
-	case 111:
-		window.location = personaleditpage;
+	case 13:
+		window.location = userdetailpage;
 		break;
-	case 112:
-		window.location = personalportraitpage;
-		break;
-	case 113:
-		window.location = personaleditpage;
-		break;
-	case 120:
-		window.location = teamviewpage;
-		break;
-	case 121:
-		window.location = teameditpage;
-		break;
-	case 122:
-		window.location = teamlogopage;
-		break;
-	case 123:
-		window.location = teamcoachpage;
-		break;
-	case 124:
-		window.location = teamcaptainpage;
-		break;
-	case 130:
-		window.location = gameviewpage;
-		break;
-	case 133:
-		window.location = gamelistpage;
+	case 14:
+		window.location = userviewpage;
 		break;
 	default:
 	}

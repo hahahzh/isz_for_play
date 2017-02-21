@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>爱试装</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/public/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+
+    <!-- Custom styles for this template -->
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
+    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/public/javascripts/main.js"></script>
+    <script type="text/javascript">
+$(document).ready(function() { 
+	successMsg = GetQueryString("successMsg");
+	var code = GetQueryString("code");
+	$("#code").val(code);
+	$("#gmsg").hide();
+	if(successMsg != null && successMsg != ''){
+		SetSMsg(successMsg);
+	}
+	loadEditPersonalDetailData();
+	});
+</script>
+  </head>
+  <body role="document" onload="">
+
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse text-center" style="background-color:#EF823A;">
+          <h5>个人信息 编辑</h5>
+    </nav>
+    <div class="alert alert-success" role="alert" id="gmsg">
+        
+      </div>
+      
+      <form method="post" id="personalForm" action="/api/user" class="form-inline">
+      <div class="col-sm-12">
+	<a href="/public/html5/memu.html" class="btn btn-default" target="_self">菜单</a>
+</div>
+<br/><br/>
+ <input type="hidden" id="user" name="user" /> 
+	 
+	 <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">尺寸:</h3>
+            </div>
+            <div class="panel-body">
+   				<select class="form-control" id="size" name="size"></select>
+            </div>
+          </div>
+	</div>
+	
+	<div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">脸型:</h3>
+            </div>
+ <div class="panel-body">
+ <select class="form-control" id="face" name="face"></select>
+            </div>
+          </div>
+</div>
+
+ <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">发型:</h3>
+            </div>
+            <div class="panel-body">
+          <select class="form-control" id="hair" name="hair"></select>
+            </div>
+          </div>
+</div>
+
+ <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">肤色:</h3>
+            </div>
+            <div class="panel-body">
+               <select class="form-control" id="skincolor" name="skincolor"></select>
+            </div>
+          </div>
+</div>
+
+ <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">个人喜好:</h3>
+            </div>
+            <div class="panel-body">
+               <select class="form-control" id="inclination" name="inclination"></select>
+            </div>
+          </div>
+</div>
+
+ <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">价格区间:</h3>
+            </div>
+            <div class="panel-body">
+<select class="form-control" id="pricerange" name="pricerange"></select>
+            </div>
+          </div>
+</div>
+
+ <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">体型:</h3>
+            </div>
+            <div class="panel-body">
+                 <select class="form-control" id="bodymodel" name="bodymodel"></select>
+            </div>
+          </div>
+</div>
+	
+		 <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">身高:</h3>
+            </div>
+            <div class="panel-body">
+              <input type="number" class="form-control" id="height" name="height"/>CM
+            </div>
+          </div>
+	</div>
+	
+	<div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">体重:</h3>
+            </div>
+            <div class="panel-body">
+              <input type="number" class="form-control" id="weight" name="weight"/>KG
+            </div>
+          </div>
+	</div>
+	
+		<div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">地址:<font color="red">(很重要)</font></h3>
+            </div>
+            <div class="panel-body">
+              <textarea rows="4" cols="50" id="address" name="address"></textarea>
+            </div>
+          </div>
+	</div>
+			 <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">星座:</h3>
+            </div>
+            <div class="panel-body">
+              <select class="form-control" id="constellation" name="constellation"></select>
+            </div>
+          </div>
+	</div>
+			 <div class="col-sm-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">血型:</h3>
+            </div>
+            <div class="panel-body">
+              <select class="form-control" id="blood" name="blood"></select>
+            </div>
+          </div>
+	</div>
+			<div class="col-sm-12">
+	<button type="button" onclick="personalDetailSubmit();" class="btn btn-default form-control" id="pSubmit">完成</button>
+</div>
+		</form>
+</body>
+</html>
